@@ -1,10 +1,11 @@
-
-  # Ahmadreza923
+var generateMarkdown = function generateMarkdown(questions,res) {
+    return `
+  # ${questions.name}
   [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)]
   (https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-  (https://github.com/Ahmadreza923/homework7-Good-Readme-Generator)
+  (https://github.com/${questions.name}/${questions.project})
   ## Description
-  Create a command-line dynamically README enerator
+  ${questions.description}
 
   ## Table of Contents
   * [Licence](#licence)
@@ -13,30 +14,36 @@
   * [Questions](#questions)
   
   ## License
-  This project is licensed under the MIT license.
+  This project is licensed under the ${questions.license} license.
   
   ## Installation
   To install necessary dependencies, run the following command: 
   ...
-  npm install
+  ${questions.install}
   ...
 
   ## Tests
   To run tests, run the following command:
   ...
-  node index.js
+  ${questions.tests}
   ...
 
   ## Questions
   The user should know:
   ...
-  It needs to have an image and Email....
+  ${questions.ripo}
   ...
 
-  <img src="https://avatars3.githubusercontent.com/u/58708688?v=4"
+  <img src="${res.data.avatar_url}"
   alt="avatar" style="border-radius: 16px" width="30" />
   If you have any questions about the repo, open an issue or contact 
-  [Ahmadreza923](https://github.com/Ahmadreza923) 
-  directly at [null]
+  [${questions.name}](${res.data.html_url}) 
+  directly at [${res.data.email}]
   
+  `;
+  }
   
+  module.exports = generateMarkdown;
+
+  
+
